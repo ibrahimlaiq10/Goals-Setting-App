@@ -1,5 +1,5 @@
 const express = require("express");
-const goalsConstoller = require("./goals.controller");
+const goalsConstoller = require("../controller/goals.controller");
 
 const goalsRoute = express.Router();
 goalsRoute.get("/", goalsConstoller.getGoals);

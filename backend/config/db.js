@@ -5,7 +5,7 @@ const MONGO_URL = process.env.MONGO_URL
 const connectDB = async ()=>{
     try{
         const conn = await mongoose.connect(MONGO_URL)
-        console.log(`mongodb connect on ${conn.connection.host}`.green.underline)
+        console.log(`mongodb connect on ${conn.connection.host}`.blue.underline)
         }
         catch(err){
         process.exit(1)
