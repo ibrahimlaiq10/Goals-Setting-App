@@ -1,6 +1,7 @@
 const express = require("express");
+const color = require("colors")
 const goalsRoute = require("./routes/goals/goals.route");
-const {errorHandler} = require('./middlerware/errorMiddleware')
+const {errorHandler} = require('./middlerware/errorMiddleware');
 
 const app = express();
 
