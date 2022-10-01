@@ -1,10 +1,14 @@
-const express = require('express');
-
+const express = require("express");
+const goalsRoute = require("./routes/goals/goals.route");
 
 const app = express();
-app.get('/',(req,res)=>{
-res.send("Hello from express")
-})
 
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
-module.exports =app
+app.get("/", (req, res) => {
+  res.send("Hello from express");
+});
+app.use("/api/goals", goalsRoute);
+
+module.exports = app;
