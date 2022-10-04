@@ -48,7 +48,7 @@ function Register() {
     dispatch(register(userData));
   };
   if(isLoading){
-    <Spinner/>
+   return <Spinner/>
   }
 
   return (
