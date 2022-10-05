@@ -33,7 +33,7 @@ const registerUser = errorHandler(async (req, res) => {
   if (user) {
     return res.status(200).json({
       message: "user added successfully",
-      data: { ...user, token: generateToken(user._id) },
+      data: { name, email, token: generateToken(user._id) },
       status: "OK",
     });
   } else {
@@ -50,7 +50,11 @@ const loginUser = errorHandler(async (req, res) => {
   if (user && (await bycript.compare(password, user.password))) {
     return res.status(200).json({
       message: "user loggin successfully",
-      data: { ...user, token: generateToken(user._id) },
+      data: {
+        name: user.name,
+        email: user.email,
+        token: generateToken(user._id),
+      },
       status: "OK",
     });
   } else {
