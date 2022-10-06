@@ -52,7 +52,7 @@ const deleteGoal = asyncHandler(async (req, res) => {
 
   await goal.remove();
 
-  res.send({ message: "goal deleted", status: "OK" });
+  res.send({ data:goal,message: "goal deleted", status: "OK" });
 });
 
 module.exports = {
